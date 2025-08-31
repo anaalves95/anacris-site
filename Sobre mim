@@ -1,97 +1,76 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu Site</title>
+  <title>Meu Site - Ana Cristina</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #333;
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
+    header { background: #444; padding: 15px; text-align: center; }
+    header nav a {
+      color: #fff; background: #222; padding: 10px 18px; margin: 5px;
+      text-decoration: none; border-radius: 5px; display: inline-block;
     }
-    header {
-      background: #333;
-      padding: 10px 0;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 8px 16px;
-      border: 1px solid white;
-      border-radius: 5px;
-      transition: 0.3s;
-    }
-    nav a:hover {
-      background: white;
-      color: #333;
-    }
-    .content {
-      padding: 30px;
-      text-align: center;
-      min-height: 200px;
-    }
+    header nav a:hover { background: #666; }
+    main { padding: 20px; max-width: 900px; margin: auto; }
+    section { display: none; }
+    section.active { display: block; }
+    footer { background: #444; color: #fff; padding: 10px; text-align: center; margin-top: 20px; }
+    h1, h2 { color: #333; }
+    ul { margin-top: 10px; padding-left: 20px; }
   </style>
 </head>
 <body>
-
   <header>
     <nav>
-      <a href="#" onclick="mostrarConteudo('link1')">Link 1</a>
-      <a href="#" onclick="mostrarConteudo('link2')">Link 2</a>
-      <a href="#" onclick="mostrarConteudo('link3')">Link 3</a>
-      <a href="#" onclick="mostrarConteudo('link4')">Link 4</a>
+      <a href="#" onclick="mostrarPagina('link1')">Link 1</a>
+      <a href="#" onclick="mostrarPagina('link2')">Link 2</a>
+      <a href="#" onclick="mostrarPagina('link3')">Link 3</a>
+      <a href="#" onclick="mostrarPagina('link4')">Link 4</a>
     </nav>
   </header>
 
-  <main class="content" id="conteudo">
-    <h2>Bem-vindo ao meu site!</h2>
-    <p>Clique nos links acima para conhecer mais sobre mim.</p>
+  <main>
+    <section id="link1" class="active">
+      <h1>Link 1 - Sobre Mim</h1>
+      <p>Olá! Eu sou <strong>Ana Cristina Alves Ferreira Sousa</strong>.</p>
+      <p>Trabalho com <strong>sistema de gestão pública</strong> e, durante o meu tempo trabalhando, me interessei pela área de <strong>engenharia de software</strong>.</p>
+      <h2>Meus hobbies</h2>
+      <ul>
+        <li>Ler</li>
+        <li>Assistir séries</li>
+        <li>Viajar</li>
+        <li>Passar tempo de qualidade com minha família e amigos</li>
+        <li>Pesquisar sobre outras culturas</li>
+      </ul>
+    </section>
+
+    <section id="link2">
+      <h1>Link 2 - Formação</h1>
+      <p>Cursei <strong>técnico em edificações</strong>, atualmente curso <strong>Engenharia de Software</strong> e também estou estudando <strong>Inglês</strong>.</p>
+    </section>
+
+    <section id="link3">
+      <h1>Link 3</h1>
+      <p>Em breve novidades...</p>
+    </section>
+
+    <section id="link4">
+      <h1>Link 4 - Contato</h1>
+      <p>E-mail para contato: <a href="mailto:anaalves2631@gmail.com">anaalves2631@gmail.com</a></p>
+    </section>
   </main>
 
+  <footer>
+    <p>&copy; 2025 - Ana Cristina</p>
+  </footer>
+
   <script>
-    function mostrarConteudo(link) {
-      let conteudo = document.getElementById("conteudo");
-      if (link === "link1") {
-        conteudo.innerHTML = `
-          <h2>Sobre mim</h2>
-          <p>Olá! Eu sou <strong>Ana Cristina Alves Ferreira Sousa</strong>.</p>
-          <p>Trabalho com sistema de gestão pública e, durante o meu tempo trabalhando, me interessei pela área de engenharia de software.</p>
-          <h3>Meus hobbies</h3>
-          <ul style="list-style: none; padding: 0;">
-            <li>📚 Ler</li>
-            <li>🎬 Assistir séries</li>
-            <li>✈️ Viajar</li>
-            <li>👨‍👩‍👧‍👦 Passar tempo de qualidade com minha família e amigos</li>
-            <li>🌍 Pesquisar sobre outras culturas</li>
-          </ul>
-        `;
-      } else if (link === "link2") {
-        conteudo.innerHTML = `
-          <h2>Formação</h2>
-          <p>Cursei técnico em edificações, atualmente curso <strong>Engenharia de Software</strong> e também estou estudando Inglês.</p>
-        `;
-      } else if (link === "link3") {
-        conteudo.innerHTML = `
-          <h2>Link 3</h2>
-          <p>Conteúdo livre que você pode personalizar depois.</p>
-        `;
-      } else if (link === "link4") {
-        conteudo.innerHTML = `
-          <h2>Contato</h2>
-          <p>E-mail para contato: <a href="mailto:anaalves2631@gmail.com">anaalves2631@gmail.com</a></p>
-        `;
-      }
+    function mostrarPagina(id) {
+      const secoes = document.querySelectorAll("section");
+      secoes.forEach(secao => secao.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
     }
   </script>
-
 </body>
 </html>
