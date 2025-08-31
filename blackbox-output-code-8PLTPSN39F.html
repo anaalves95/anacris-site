@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meu Site - Ana Cristina</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
+    header { background: #444; padding: 15px; text-align: center; position: sticky; top: 0; }
+    header nav a {
+      color: #fff; background: #222; padding: 10px 18px; margin: 5px;
+      text-decoration: none; border-radius: 5px; display: inline-block;
+      transition: background-color 0.3s;
+    }
+    header nav a:hover, header nav a.active { background: #666; }
+    main { padding: 20px; max-width: 900px; margin: auto; }
+    section { display: none; }
+    section.active { display: block; }
+    footer { background: #444; color: #fff; padding: 10px; text-align: center; margin-top: 20px; }
+    h1, h2, h3 { color: #333; }
+    ul { margin-top: 10px; padding-left: 20px; }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #eee;
+    }
+    caption {
+      font-weight: bold;
+      margin-bottom: 8px;
+      font-size: 1.1em;
+      text-align: left;
+      padding: 5px 0;
+    }
+    pre {
+      background:#f4f4f4; 
+      padding:15px; 
+      border-radius:5px; 
+      overflow-x:auto; 
+      max-height: 300px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-size: 0.9em;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+    }
+    .portfolio-section {
+      margin-bottom: 40px;
+    }
+    .sql-snippet {
+      font-family: Consolas, monospace;
+      font-size: 0.9em;
+      color: #2c3e50;
+      background-color: #ecf0f1;
+      border-left: 4px solid #2980b9;
+      padding: 10px 15px;
+      margin-bottom: 15px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" onclick="mostrarPagina('sobre-mim'); return false;" id="menu-sobre-mim" class="active">Sobre Mim</a>
+      <a href="#" onclick="mostrarPagina('formacao'); return false;" id="menu-formacao">Formação</a>
+      <a href="#" onclick="mostrarPagina('portfolio'); return false;" id="menu-portfolio">Portfólio</a>
+      <a href="#" onclick="mostrarPagina('contatos'); return false;" id="menu-contatos">Contatos</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="sobre-mim" class="active">
+      <h1>Sobre Mim</h1>
+      <p>Olá! Eu sou <strong>Ana Cristina Alves Ferreira Sousa</strong>.</p>
+      <p>Trabalho com <strong>sistema de gestão pública</strong> e, durante o meu tempo trabalhando, me interessei pela área de <strong>engenharia de software</strong>.</p>
+      <h2>Meus hobbies</h2>
+      <ul>
+        <li>Ler</li>
+        <li>Assistir séries</li>
+        <li>Viajar</li>
+        <li>Passar tempo de qualidade com minha família e amigos</li>
+        <li>Pesquisar sobre outras culturas</li>
+      </ul>
+    </section>
+
+    <section id="formacao">
+      <h1>Formação</h1>
+      <p>Cursei <strong>técnico em edificações</strong>, atualmente curso <strong>Engenharia de Software</strong> e também estou estudando <strong>Inglês</strong>.</p>
+    </section>
+
+    <section id="portfolio">
+      <h1>Portfólio</h1>
+      <p>Apresento aqui um projeto de banco de dados para um sistema de locação de veículos, com modelagem, dados e consultas SQL.</p>
+
+      <div class="portfolio-section">
+        <h2>Modelagem e Dados</h2>
+        <p>O sistema possui as seguintes tabelas principais:</p>
+        <ul>
+          <li><strong>Cliente:</strong> informações pessoais dos clientes.</li>
+          <li><strong>Veículo:</strong> dados dos veículos disponíveis para locação.</li>
+          <li><strong>Manutenção:</strong> registros de manutenções realizadas nos veículos.</li>
+          <li><strong>Pagamento:</strong> informações sobre pagamentos realizados.</li>
+          <li><strong>Locação:</strong> dados das locações feitas pelos clientes.</li>
+          <li><strong>LocacaoVeiculo:</strong> relação entre locações e veículos alugados.</li>
+        </ul>
+
+        <h3>Exemplo de inserção de clientes:</h3>
+        <pre class="sql-snippet">
+insert into Cliente (idCliente, CPF, nome, telefone, email, endereco) values
+  (1, '045.159.785-10', 'João da Silva', '(41) 99854-5648', 'joao.s@email.com.br', 'Rua das Flores, 3578, Curitiba - PR'),
+  (2, '147.963.789-02', 'Maria de Souza', '(21) 99763-1213', 'maria.s@email.com.br', 'Rua Vicente Machado, 10503, apto. 1007, Rio de Janeiro - RJ');
+        </pre>
+
+        <h3>Exemplo de inserção de veículos:</h3>
+        <pre class="sql-snippet">
+insert into Veiculo (idVeiculo, modelo, marca, ano, placa, valorDiaria, estado) values
+  (1, 'Onix', 'Chevrolet', 2021, 'ABC-1D34', 150.00, 'Disponível'),
+  (2, 'HB20', 'Hyundai', 2022, 'XYZ-5E78', 180.00, 'Alugado');
+        </pre>
+      </div>
+
+      <div class="portfolio-section">
+        <h2>Visualização dos Dados</h2>
+        <p>Aqui estão alguns dados reais inseridos no sistema:</p>
+
+        <h3>Clientes</h3>
+        <table>
+          <thead>
+            <tr><th>ID</th><th>Nome</th><th>CPF</th><th>Telefone</th><th>Email</th><th>Endereço</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>João da Silva</td><td>045.159.785-10</td><td>(41) 99854-5648</td><td>joao.s@email.com.br</td><td>Rua das Flores, 3578, Curitiba - PR</td></tr>
+            <tr><td>2</td><td>Maria de Souza</td><td>147.963.789-02</td><td>(21) 99763-1213</td><td>maria.s@email.com.br</td><td>Rua Vicente Machado, 10503, apto. 1007, Rio de Janeiro - RJ</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Veículos</h3>
+        <table>
+          <thead>
+            <tr><th>ID</th><th>Modelo</th><th>Marca</th><th>Ano</th><th>Placa</th><th>Valor Diária</th><th>Estado</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Onix</td><td>Chevrolet</td><td>2021</td><td>ABC-1D34</td><td>R$ 150,00</td><td>Disponível</td></tr>
+            <tr><td>2</td><td>HB20</td><td>Hyundai</td><td>2022</td><td>XYZ-5E78</td><td>R$ 180,00</td><td>Alugado</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="portfolio-section">
+        <h2>Consultas SQL</h2>
+        <p>Exemplo de consulta para listar veículos disponíveis:</p>
+        <pre class="sql-snippet">
+SELECT modelo, marca, ano, placa, valorDiaria
+FROM Veiculo
+WHERE estado = 'Disponível';
+        </pre>
+
+        <p>Exemplo de consulta para obter locações ativas:</p>
+        <pre class="sql-snippet">
+SELECT L.idLocacao, C.nome AS Cliente, V.modelo AS Veículo, L.dataInicio, L.dataFim
+FROM Locacao L
+JOIN Cliente C ON L.idCliente = C.idCliente
+JOIN LocacaoVeiculo LV ON L.idLocacao = LV.idLocacao
+JOIN Veiculo V ON LV.idVeiculo = V.idVeiculo
+WHERE L.dataFim >= CURRENT_DATE;
+        </pre>
+      </div>
+
+      <p>Este projeto demonstra habilidades em modelagem de dados, manipulação SQL e desenvolvimento de sistemas para gestão de locação de veículos.</p>
+    </section>
+
+    <section id="contatos">
+      <h1>Contatos</h1>
+      <p>E-mail para contato: <a href="mailto:anaalves2631@gmail.com">anaalves2631@gmail.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Ana Cristina</p>
+  </footer>
+
+  <script>
+    function mostrarPagina(id) {
+      const secoes = document.querySelectorAll("section");
+      const links = document.querySelectorAll("header nav a");
+      secoes.forEach(secao => secao.classList.remove("active"));
+      links.forEach(link => link.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+      document.getElementById("menu-" + id).classList.add("active");
+    }
+  </script>
+</body>
+</html>
