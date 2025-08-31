@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sobre Ana Cristina</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        p {
+            line-height: 1.6;
+        }
+        ul {
+            list-style-type: square;
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá! Eu sou Ana Cristina Alves Ferreira Sousa</h1>
+    <p>Trabalho com sistema de gestão pública e, durante o meu tempo trabalhando, me interessei pela área de engenharia de software.</p>
+    <p>Cursei técnico em edificações, atualmente curso Engenharia de Software e também estou estudando Inglês.</p>
+    <h2>Meus hobbies</h2>
+    <ul>
+        <li>Ler</li>
+        <li>Assistir séries</li>
+        <li>Viajar</li>
+        <li>Passar tempo de qualidade com minha família e amigos</li>
+        <li>Pesquisar sobre outras culturas</li>
+    </ul>
+</body>
+</html>
