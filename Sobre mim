@@ -1,40 +1,97 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sobre Ana Cristina</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 700px;
-            margin: 40px auto;
-            padding: 0 20px;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        h1 {
-            color: #2c3e50;
-        }
-        p {
-            line-height: 1.6;
-        }
-        ul {
-            list-style-type: square;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Site</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #333;
+      padding: 10px 0;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 16px;
+      border: 1px solid white;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      background: white;
+      color: #333;
+    }
+    .content {
+      padding: 30px;
+      text-align: center;
+      min-height: 200px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Olá! Eu sou Ana Cristina Alves Ferreira Sousa</h1>
-    <p>Trabalho com sistema de gestão pública e, durante o meu tempo trabalhando, me interessei pela área de engenharia de software.</p>
-    <p>Cursei técnico em edificações, atualmente curso Engenharia de Software e também estou estudando Inglês.</p>
-    <h2>Meus hobbies</h2>
-    <ul>
-        <li>Ler</li>
-        <li>Assistir séries</li>
-        <li>Viajar</li>
-        <li>Passar tempo de qualidade com minha família e amigos</li>
-        <li>Pesquisar sobre outras culturas</li>
-    </ul>
+
+  <header>
+    <nav>
+      <a href="#" onclick="mostrarConteudo('link1')">Link 1</a>
+      <a href="#" onclick="mostrarConteudo('link2')">Link 2</a>
+      <a href="#" onclick="mostrarConteudo('link3')">Link 3</a>
+      <a href="#" onclick="mostrarConteudo('link4')">Link 4</a>
+    </nav>
+  </header>
+
+  <main class="content" id="conteudo">
+    <h2>Bem-vindo ao meu site!</h2>
+    <p>Clique nos links acima para conhecer mais sobre mim.</p>
+  </main>
+
+  <script>
+    function mostrarConteudo(link) {
+      let conteudo = document.getElementById("conteudo");
+      if (link === "link1") {
+        conteudo.innerHTML = `
+          <h2>Sobre mim</h2>
+          <p>Olá! Eu sou <strong>Ana Cristina Alves Ferreira Sousa</strong>.</p>
+          <p>Trabalho com sistema de gestão pública e, durante o meu tempo trabalhando, me interessei pela área de engenharia de software.</p>
+          <h3>Meus hobbies</h3>
+          <ul style="list-style: none; padding: 0;">
+            <li>📚 Ler</li>
+            <li>🎬 Assistir séries</li>
+            <li>✈️ Viajar</li>
+            <li>👨‍👩‍👧‍👦 Passar tempo de qualidade com minha família e amigos</li>
+            <li>🌍 Pesquisar sobre outras culturas</li>
+          </ul>
+        `;
+      } else if (link === "link2") {
+        conteudo.innerHTML = `
+          <h2>Formação</h2>
+          <p>Cursei técnico em edificações, atualmente curso <strong>Engenharia de Software</strong> e também estou estudando Inglês.</p>
+        `;
+      } else if (link === "link3") {
+        conteudo.innerHTML = `
+          <h2>Link 3</h2>
+          <p>Conteúdo livre que você pode personalizar depois.</p>
+        `;
+      } else if (link === "link4") {
+        conteudo.innerHTML = `
+          <h2>Contato</h2>
+          <p>E-mail para contato: <a href="mailto:anaalves2631@gmail.com">anaalves2631@gmail.com</a></p>
+        `;
+      }
+    }
+  </script>
+
 </body>
 </html>
